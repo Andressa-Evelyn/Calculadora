@@ -9,6 +9,29 @@ const numeros = document.querySelectorAll('[id*=tecla'); //seleciona todos que t
 const operadores = document.querySelectorAll('[id*=operador')
 
  let novoNumero = true;
+ let operador;
+ let numeroAnterior;
+
+ const operacaoPendente = () => {
+    operador != undefined;
+ }
+
+ const calcular = () => {
+    if(operacaoPendente()){
+        const numeroAtual =parseFloat(display.textContent) ;
+         novoNumero = true;
+         const resultado = eval(`${numeroAnterior}${operador}${numeroAtual}`);
+        if(operador == '+'){
+            atualizarDisplay(numeroAnterior + numeroAtual)
+        } else if(operador == '-'){
+            atualizarDisplay(numeroAnterior - numeroAtual)
+        } else if(operador == '*'){
+            atualizarDisplay(numeroAnterior * numeroAtual)
+        } else if(operador == '/'){
+            atualizarDisplay(numeroAnterior / numeroAtual)
+        }
+    }
+ }
 
 const atualizarDisplay = (texto) => {
     if(novoNumero){
@@ -29,8 +52,15 @@ const inserirNumero = (evento) => {
 
 
 
-const selecionarOperador = () => {
-    novoNumero = true;
+const selecionarOperador = (evento) => {
+    if(!novoNumero){
+        calcular();
+        novoNumero = true;
+        operador = evento.target.textContent;
+        numeroAnterior =parseFloat(display.textContent) ;
+        
+    }
+   
 }
 
 
