@@ -1,0 +1,111 @@
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box; /* tamanho vai incluir o padding e border*/
+
+ 
+
+}
+
+ 
+
+body {
+
+    background-color: whitesmoke;
+
+    padding: 30px 0; /*padding-top e padding-bottom é 30px e padding-right e padding-left é 0px*/
+
+}
+
+ 
+
+.calculator {
+
+    width: 400px;
+
+    margin: 0 auto;  /*0=margem em cima e em baixo e o auto vai colocar a mesma margem para direita e esquerda, centralizando a div*/
+
+    background-color: palevioletred;
+
+    padding: 20px;
+
+    border-radius: 5px;
+
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.438);
+
+}
+
+ 
+
+.buttons {
+
+    display: grid;  /*cria um container de grid*/
+
+    grid-template-columns: 1fr 1fr 1fr 1fr;  /*cria 4 colunas com 1 fração de espaço cada*/
+
+    grid-gap: 10px; /* espaço entre as linhas e colunas de uma grid */
+
+}
+
+ 
+
+.display {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    width: 100%;
+
+    height: 100px;
+
+    margin-bottom: 20px;
+
+    padding: 15px;
+
+    background-color: black;
+
+    color: white;
+
+    font: normal 4rem serif;  /*4rem = 4 vezes o tamanho da fonte raiz*/
+
+    overflow: hidden;
+
+    border-radius: 5px;
+
+}
+
+ 
+
+.calculator button {
+
+    background-color: black;
+
+    color: white;
+
+    font-size: 1.5rem;
+
+    padding: 10px;
+
+    border-radius: 5px;
+
+    outline: none;
+
+    cursor: pointer;
+
+    border: 2px solid black;
+
+}
+
+ 
+
+.calculator button:hover {
+
+    background-color: pink;
+
+    color: black;
+
+}
